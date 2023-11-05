@@ -1,0 +1,348 @@
+/*General css block of code*/
+*{
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box; /*sets the border as box*/
+    font-family: 'Poppins', sans-serif;
+    list-style: none; /*removes dots in list*/
+    text-decoration: none; /*removes underline in list*/
+}
+
+/*Contains the Css for header*/
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 33px 9%;
+    background: transparent;
+}
+
+/*containts css for body*/
+body {
+    /*background-image: url('pxfuel.jpg'); - can be used as backup background*/ 
+    background: linear-gradient(to right, rgba(168, 50, 50, .2), rgba(168, 50, 50, 2));
+    color: #ffffff;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*css for class logo*/
+.logo {
+    font-size: 30px; /*1-2 sets the size and weight of the Bloodline*/
+    font-weight: 700;
+    color: black; /*sets color*/
+}
+
+/*colors the span in class logo*/
+.logo span {
+    color:  #880808;
+}
+
+/*css for navigation list*/
+.navigation-list {
+    display: flex;
+}
+
+/*css for navigation list a*/
+.navigation-list a {
+    color: black; /*sets color*/
+    margin-left: 60px; /*2-4 are just arrangements*/
+    font-size: 15px;
+    font-weight: 700;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease; /*minor animation when hovering button*/
+}
+
+/*css color when hovering text*/
+.navigation-list a:hover {
+    border-bottom: 2px solid black; /*sets color for border*/
+}
+
+/*css for class menu-icon*/
+#menu-icon {
+    color: black; /*sets color*/
+    font-size: 25px; /*font sizr of icon*/
+    z-index: 1001; /*position in the z plane*/
+    cursor: pointer; /*just tells html icon is type pointer*/
+    display: none; /*does not display unless told to*/
+}
+
+/*css for section*/
+.sec {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    /*background: linear-gradient(245.59deg, #7FD1B9 0%, #5B8F8E 28.53%, #2B4141 75.52%);*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1rem;
+}
+
+section {
+    padding: 0 19%;
+}
+
+.logo-text h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 90px;
+    line-height: 1;
+    color: black;
+    margin: 0 0 45px;
+}
+
+
+.logo-text h1 span{
+    font-family: 'Permanent Marker', cursive;
+    color:  #880808;
+}
+
+.logo-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.logo-text p {
+    color: black;
+    font-size: 15px;
+    font-weight: 450;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+
+.logo-image {
+    width: auto;
+    top: 20%;
+    margin-left: 160px;
+}
+
+.logo-text a {
+    display: inline-block;
+    color: black;
+    background: rgba(168, 50, 50, .5);
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .55s ease;
+}
+
+.logo-text a:hover {
+    background: transparent;
+    border: 1px solid black;
+    transform: translateX(4px);
+}
+
+.logo-text a.ctaa {
+    background: transparent;
+    border: 1px solid black;
+    margin-left: 20px;
+}
+
+.logo-text a.ctaa i {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.socials {
+    position: absolute;
+    padding: 0 19%;
+    bottom: 40%;
+    transform: translateY(-50%);
+}
+
+.socials i {
+    display: block;
+    margin: 20px 0;
+    font-size: 24px;
+    color: black;
+    transition: all .50s ease;
+}
+
+.socials i:hover {
+    color:rgba(168, 50, 50, .2);
+    transform: translateY(-5px);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 6%;
+    right: 9%;
+}
+
+.scroll-down i {
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    color: black;
+    background: rgba(168, 50, 50, 20);
+    border-radius: 30px;
+    transition: all .50s ease;
+}
+
+.scroll-down i:hover {
+    transform: translateX(-5px);
+}
+
+/* Styles for screens up to 990px wide */
+@media only screen and (max-width: 990px) {
+    #menu-icon {
+        display: block;
+    }
+    /* Hide social icons and scroll down arrow */
+    .socials, .scroll-down {
+        display: none;
+    }
+    /* Navigation menu styles */
+    .navigation-list {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 250px;
+        height: auto;
+        background: rgba(168, 50, 50, 2);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px 20px;
+        transition: all .55s ease;
+    }
+    .navigation-list a {
+        margin-left: 0;
+        display: block;
+        margin: 7px 0;
+    }
+    /* Show navigation menu when menu icon is clicked */
+    .navigation-list.open {
+        right: 0;
+    }
+    .logo-image {
+        display: none;
+    }
+    .logo-text {
+        line-height: 1.1rem;
+        align-items: center;
+        padding-right: 3rem;
+        margin-bottom: 8rem;
+    }
+}
+
+/* Styles for screens up to 1195px wide */
+@media only screen and (max-width: 1195px) {
+    /* Reduce section padding */
+    section {
+        padding: 0 9%; 
+        transition: .2s;
+    }
+    /* Center logo text */
+    .logo-text {
+        padding-top: 115px;
+        text-align: center;
+    }
+    /* Adjust logo image size */
+    .logo-image {
+        width: 560px;
+        height: auto;
+    }
+    /* Change section grid to single column */
+    .sec {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Styles for screens up to 1340px wide */
+@media only screen and (max-width: 1340px) {
+    /* Adjust logo image size */
+    .logo-image {
+        width: fit-content;
+        height: auto;
+        margin-right: 5rem;
+    }
+    /* Adjust logo text size and spacing */
+    .logo-text h1 {
+        font-size: 75px;
+        margin: 0 0 30px;
+    }
+    .logo-text h4{
+        margin-bottom: 25px;
+    }
+}
+
+/* Styles for screens up to 1460px wide */
+@media (max-width: 1460px) {
+    /* Reduce section padding */
+    section {
+        padding: 0 12%;
+        transition: .2s;
+    }
+    .socials {
+        display: none;
+    }
+    .scroll-down {
+        display: none;
+    }
+}
+
+/* Styles for screens up to 1650px wide */
+@media only screen and (max-width: 1650px) {
+    /* No changes needed, keeping same styles as screens up to 1535px wide */
+}
+
+/* Styles for screens wider than 1650px */
+@media only screen and (min-width: 1651px) {
+    /* Increase header and socials padding */
+    header, .socials {
+        padding: 15px 10%;
+        transition: .2s;
+    }
+    /* Move scroll down arrow to the right */
+    .scroll-down{
+        right: 10%;
+        transition: .2s;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    section {
+        width: 100%;
+        height: auto;
+    }
+    .logo-text h1 {
+        font-size: 4rem;
+        line-height: 1.1rem;
+    }
+    .logo-text p {
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+    }
+}
+
+
+@media only screen and (max-width: 375px) {
+    section {
+    width: fit-content;
+    height: auto;
+    }
+    .logo-text h1{
+        font-size: 3.5rem;
+        line-height: 1.1rem;
+    }
+    .logo-text p{
+        font-size: 1rem;
+        line-height: 1.1rem;
+        align-items: center;
+    }
+    }
+    
